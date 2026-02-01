@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMMAR Islamic Studio</title>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body{
+    background: linear-gradient(135deg,#0b3d2e,#c9a227);
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    color:white;
+}
+.card{
+    max-width:420px;
+    margin:30px auto;
+    background:#062d22;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 20px gold;
+}
+.profile-img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:4px solid gold;
+}
+.social-link{
+    display:block;
+    margin:10px 0;
+    padding:12px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    background:#0f5132;
+    border:1px solid gold;
+}
+.social-link i{
+    color:gold;
+    margin-right:8px;
+}
+.lang-btn{
+    background:gold;
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    margin:10px;
+    cursor:pointer;
+}
+.section{
+    margin-top:20px;
+    border-top:1px solid gold;
+    padding-top:15px;
+}
+.gallery img{
+    width:100%;
+    border-radius:10px;
+    margin:8px 0;
+    border:2px solid gold;
+}
+.footer{
+    margin-top:15px;
+    font-size:13px;
+    color:#ccc;
+}
+.gallery-btn{
+  margin: 12px auto;
+  padding: 10px 22px;
+  background: transparent;
+  color: gold;
+  border: 2px solid gold;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-btn:hover{
+  background: gold;
+  color: #0b3d2e;
+}
+.creator {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #d4af37; /* gold */
+    text-align: center;
+}
+.creator {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #d4af37; /* gold */
+    text-align: center;
+}
+.creator {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #d4af37; /* gold */
+    text-align: center;
+    direction: rtl;
+}
+
+.creator a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.creator a:Red {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/profile.jpg" class="profile-img">
+<h2>AMMAR Islamic Studio</h2>
+<button class="gallery-btn" id="galleryBtn" onclick="toggleGallery()">
+  View Islamic Gallery
+</button>
+<div class="gallery" id="gallery" style="display:none;">
+  <img src="images/img1.jpg">
+  <img src="images/img2.jpg">
+  <img src="images/img3.jpg">
+</div>
+
+<button class="lang-btn" onclick="toggleLang()">اردو / English</button>
+
+<!-- SOCIAL LINKS -->
+<a href="fb://page/61586992419664"
+onclick="window.location.href='https://www.facebook.com/61586992419664'"
+class="social-link">
+<i class="fab fa-facebook-f"></i> Facebook Page
+</a>
+
+<a href="https://youtube.com/@ammarstudio-o4f"
+target="_blank" class="social-link">
+<i class="fab fa-youtube"></i> YouTube Channel
+</a>
+
+<a href="https://www.tiktok.com/@ansari.pk11"
+target="_blank" class="social-link">
+<i class="fab fa-tiktok"></i> TikTok Channel
+</a>
+
+<!-- AYAT / HADITH -->
+<div class="section" id="urdu">
+<p>﴿ إِنَّ مَعَ الْعُسْرِ يُسْرًا ﴾</p>
+<p>بے شک ہر مشکل کے ساتھ آسانی ہے</p>
+<p><b>حدیث:</b> بہترین انسان وہ ہے جو دوسروں کو فائدہ پہنچائے</p>
+</div>
+
+<div class="section" id="english" style="display:none;">
+<p>Indeed, with hardship comes ease. (Quran 94:6)</p>
+<p><b>Hadith:</b> The best among you are those who benefit others.</p>
+</div>
+
+<!-- GALLERY -->
+<div class="section gallery">
+  <h3>Islamic Gallery</h3>
+
+  <img src="images/img1.jpg" alt="Islamic Image 1">
+  <img src="images/img2.jpg" alt="Islamic Image 2">
+  <img src="images/img3.jpg" alt="Islamic Image 3">
+
+</div>
+
+<div class="footer">
+<p class="creator">
+  © 2026 AMMAR Islamic Studio
+<p class="creator">Created by Muhammad Ammar Liaqat</p>
+    تخلیق کردہ:
+    <a href=https://facebook.com/ammar.islamic.studio target="_blank">
+        محمد عمار لیاقت
+    </a>
+</p>
+</div>
+
+</div>
+
+<script>
+/* =========================
+   LANGUAGE TOGGLE
+========================= */
+function toggleLang(){
+  var urdu = document.getElementById("urdu");
+  var english = document.getElementById("english");
+
+  if(urdu.style.display === "none"){
+    urdu.style.display = "block";
+    english.style.display = "none";
+  } else {
+    urdu.style.display = "none";
+    english.style.display = "block";
+  }
+}
+
+/* =========================
+   GALLERY SHOW / HIDE
+========================= */
+function toggleGallery(){
+  var gallery = document.getElementById("gallery");
+  var btn = document.getElementById("galleryBtn");
+
+  if(gallery.style.display === "none" || gallery.style.display === ""){
+    gallery.style.display = "block";
+    btn.innerHTML = "Hide Islamic Gallery";
+  } else {
+    gallery.style.display = "none";
+    btn.innerHTML = "View Islamic Gallery";
+  }
+}
+</script>
+
+</body>
+</html>
